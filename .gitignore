@@ -1,2 +1,5 @@
 *.ci
 *.ri
+*.asd
+*.sdb
+*.sym
