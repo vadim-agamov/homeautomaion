@@ -1,0 +1,17 @@
+{
+  "name": "node-red-contrib-uptime",
+  "version": "1.0.0",
+  "description": "Validate raw data from sensors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vadim Agamov",
+  "license": "ISC",
+
+  "node-red": {
+    "nodes": {
+        "uptime": "uptime.js"
+    }
+  }
+}
