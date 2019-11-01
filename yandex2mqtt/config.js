@@ -44,10 +44,32 @@ module.exports = {
     ],
 
     devices: [
-    //_______________ Начало устройства ______________//
-	{
+    	{
             name: 'Свет',
-            room: 'Холл',
+            room: 'Гостиная',
+            type: 'devices.types.light',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/light0/on', // топик управления
+                    stat: '/devices/yandex/controls/light0'     // топик статуса
+                },
+            ],
+            capabilities: [
+                {
+                    type: 'devices.capabilities.on_off',
+                    retrievable: true,
+                    state: {
+                        instance: 'on',
+                        value: true
+                    }
+                },
+            ]
+        },
+	    
+	{
+            name: 'Лампа',
+            room: 'Гостиная',
             type: 'devices.types.light',
             mqtt: [
                  {
@@ -66,8 +88,144 @@ module.exports = {
                     }
                 },
             ]
-        }
-    //_______________ Конец устройства _______________//
-    ]
+        },
+	    
+	{
+            name: 'Свет',
+            room: 'Прихожая',
+            type: 'devices.types.light',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/light2/on', // топик управления
+                    stat: '/devices/yandex/controls/light2'     // топик статуса
+                },
+            ],
+            capabilities: [
+                {
+                    type: 'devices.capabilities.on_off',
+                    retrievable: true,
+                    state: {
+                        instance: 'on',
+                        value: true
+                    }
+                },
+            ]
+        },
 
+	{
+            name: 'Свет',
+            room: 'Ванная',
+            type: 'devices.types.light',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/light3/on', // топик управления
+                    stat: '/devices/yandex/controls/light3'     // топик статуса
+                },
+            ],
+            capabilities: [
+                {
+                    type: 'devices.capabilities.on_off',
+                    retrievable: true,
+                    state: {
+                        instance: 'on',
+                        value: true
+                    }
+                },
+            ]
+        },
+	    
+	{
+            name: 'Свет',
+            room: 'Спальня',
+            type: 'devices.types.light',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/light5/on', // топик управления
+                    stat: '/devices/yandex/controls/light5'     // топик статуса
+                },
+            ],
+            capabilities: [
+                {
+                    type: 'devices.capabilities.on_off',
+                    retrievable: true,
+                    state: {
+                        instance: 'on',
+                        value: true
+                    }
+                },
+            ]
+        },
+	        
+	{
+            name: 'Свет',
+            room: 'Холл',
+            type: 'devices.types.light',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/light7/on', // топик управления
+                    stat: '/devices/yandex/controls/light7'     // топик статуса
+                },
+            ],
+            capabilities: [
+                {
+                    type: 'devices.capabilities.on_off',
+                    retrievable: true,
+                    state: {
+                        instance: 'on',
+                        value: true
+                    }
+                },
+            ]
+        },
+
+	{
+            name: 'Свет',
+            room: 'Лестница',
+            type: 'devices.types.light',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/light10/on', // топик управления
+                    stat: '/devices/yandex/controls/light10'     // топик статуса
+                },
+            ],
+            capabilities: [
+                {
+                    type: 'devices.capabilities.on_off',
+                    retrievable: true,
+                    state: {
+                        instance: 'on',
+                        value: true
+                    }
+                },
+            ]
+        },
+	    
+	{
+            name: 'Свет',
+            room: 'Детская',
+            type: 'devices.types.light',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/light11/on', // топик управления
+                    stat: '/devices/yandex/controls/light11'     // топик статуса
+                },
+            ],
+            capabilities: [
+                {
+                    type: 'devices.capabilities.on_off',
+                    retrievable: true,
+                    state: {
+                        instance: 'on',
+                        value: true
+                    }
+                },
+            ]
+        }
+    ]
 }
