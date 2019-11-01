@@ -1,0 +1,73 @@
+module.exports = {
+
+    mqtt: {
+        host: 'localhost',
+        port: 1883,
+        user: '',
+        password: ''
+    },
+
+    https: {
+        privateKey: '/home/vadim/code/yandex2mqtt/node-key.pem',
+        certificate: '/home/vadim/code/yandex2mqtt/certificate.pem',
+        port: 443
+    },
+
+    clients: [
+    {
+        id: '1',
+        name: 'Yandex',
+        clientId: 'yandex-smarthome-coconuts255',
+        clientSecret: '9FwCbbqHVz',
+        isTrusted: false
+        },
+    ],
+
+    users: [{
+            id: '1',
+            username: 'admin',
+            password: 'admin',
+            name: 'Administrator'
+        },
+        {
+            id: '2',
+            username: 'root',
+            password: 'root',
+            name: 'Administrator2'
+        },
+	{
+            id: '3',
+            username: 'vadim',
+            password: 'vadim',
+            name: 'Administrator3'
+        }
+    ],
+
+    devices: [
+    //_______________ Начало устройства ______________//
+	{
+            name: 'Свет',
+            room: 'Холл',
+            type: 'devices.types.light',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/light1/on', // топик управления
+                    stat: '/devices/yandex/controls/light1'     // топик статуса
+                },
+            ],
+            capabilities: [
+                {
+                    type: 'devices.capabilities.on_off',
+                    retrievable: true,
+                    state: {
+                        instance: 'on',
+                        value: true
+                    }
+                },
+            ]
+        }
+    //_______________ Конец устройства _______________//
+    ]
+
+}
