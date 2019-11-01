@@ -69,7 +69,7 @@ module.exports = {
 	    
 	{
             name: 'Лампа',
-            room: 'Гостиная',
+            room: 'Кухня',
             type: 'devices.types.light',
             mqtt: [
                  {
@@ -168,6 +168,29 @@ module.exports = {
                     type: 'on',
                     set: '/devices/yandex/controls/light7/on', // топик управления
                     stat: '/devices/yandex/controls/light7'     // топик статуса
+                },
+            ],
+            capabilities: [
+                {
+                    type: 'devices.capabilities.on_off',
+                    retrievable: true,
+                    state: {
+                        instance: 'on',
+                        value: true
+                    }
+                },
+            ]
+        },
+	    
+	{
+            name: 'Свет',
+            room: 'Кухня',
+            type: 'devices.types.light',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/light9/on', // топик управления
+                    stat: '/devices/yandex/controls/light9'     // топик статуса
                 },
             ],
             capabilities: [
