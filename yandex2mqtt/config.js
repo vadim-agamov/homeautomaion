@@ -249,6 +249,34 @@ module.exports = {
                     }
                 },
             ]
+        },
+	    
+	{
+            name: 'Радиатор',
+            room: 'Ванная',
+            type: 'devices.types.thermostat',
+            mqtt: [
+                 {
+                    type: 'on',
+                    set: '/devices/yandex/controls/bath_thermostat/temp', // топик управления
+                    stat: '/devices/yandex/controls/bath_thermostat'     // топик статуса
+                },
+            ],
+            capabilities: [
+		{
+			"type": "devices.capabilities.range",
+			"retrievable": true,
+			"parameters": {
+			    "instance": "temperature",
+			    "random_access": true,
+			    "range": {
+				"max": 25,
+				"min": 18,
+				"precision": 1
+			    },
+			    "unit": "unit.temperature.celsius"
+		}
+            ]
         }
     ]
 }
