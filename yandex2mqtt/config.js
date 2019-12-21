@@ -210,28 +210,22 @@ module.exports = {
 		},
 
 		{
-			name: 'Радиатор',
-			room: 'Ванная',
-			type: 'devices.types.thermostat',
+			name: 'Свет',
+			room: 'Туалет',
+			type: 'devices.types.light',
 			mqtt: [{
 				type: 'on',
-				set: '/devices/yandex/controls/bath_thermostat/temp', // топик управления
-				stat: '/devices/yandex/controls/bath_thermostat' // топик статуса
+				set: '/devices/yandex/controls/light14/on', // топик управления
+				stat: '/devices/yandex/controls/light14' // топик статуса
 			}, ],
 			capabilities: [{
-				"type": "devices.capabilities.range",
-				"retrievable": true,
-				"parameters": {
-					"instance": "temperature",
-					"random_access": true,
-					"range": {
-						"max": 25,
-						"min": 18,
-						"precision": 1
-					},
-					"unit": "unit.temperature.celsius"
+				type: 'devices.capabilities.on_off',
+				retrievable: true,
+				state: {
+					instance: 'on',
+					value: true
 				}
-			}]
+			}, ]
 		}
 	]
 }
